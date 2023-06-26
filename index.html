@@ -13,7 +13,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 9999;
+            z-index: 2;
         }
     </style>
 </head>
@@ -23,16 +23,54 @@
 </div>
 
 <script>
+    var nyanCatDiv = document.getElementById('nyan-cat');
+
     // Adjust the size of the Nyan Cat here
     var nyanCatWidth = 300;
     var nyanCatHeight = 150;
 
-    var nyanCatDiv = document.getElementById('nyan-cat');
     nyanCatDiv.style.width = nyanCatWidth + 'px';
     nyanCatDiv.style.height = nyanCatHeight + 'px';
 
     // Adjust the size of the browser window to fit the Nyan Cat
     window.resizeTo(nyanCatWidth + 50, nyanCatHeight + 50);
+
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+    var deltaX = 5; // Horizontal movement speed
+    var deltaY = 2; // Vertical movement speed
+
+    function moveNyanCat() {
+        var currentLeft = parseInt(nyanCatDiv.style.left);
+        var currentTop = parseInt(nyanCatDiv.style.top);
+
+        if (isNaN(currentLeft)) {
+            currentLeft = screenWidth / 2;
+        }
+
+        if (isNaN(currentTop)) {
+            currentTop = screenHeight / 2;
+        }
+
+        var newLeft = currentLeft + deltaX;
+        var newTop = currentTop + deltaY;
+
+        if (newLeft + nyanCatWidth > screenWidth || newLeft < 0) {
+            deltaX *= -1;
+        }
+
+        if (newTop + nyanCatHeight > screenHeight || newTop < 0) {
+            deltaY *= -1;
+        }
+
+        nyanCatDiv.style.left = newLeft + 'px';
+        nyanCatDiv.style.top = newTop + 'px';
+
+        requestAnimationFrame(moveNyanCat);
+    }
+
+    // Start moving the Nyan Cat
+    moveNyanCat();
 </script>
 </body>
 </html>
