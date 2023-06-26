@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nyan Cat</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #nyan-cat {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+<div id="nyan-cat">
+    <img src="https://www.nyan.cat/cats/original.gif" alt="Nyan Cat">
+</div>
+
+<script>
+    // Adjust the size of the Nyan Cat here
+    var nyanCatWidth = 300;
+    var nyanCatHeight = 150;
+
+    var nyanCatDiv = document.getElementById('nyan-cat');
+    nyanCatDiv.style.width = nyanCatWidth + 'px';
+    nyanCatDiv.style.height = nyanCatHeight + 'px';
+
+    // Adjust the size of the browser window to fit the Nyan Cat
+    window.resizeTo(nyanCatWidth + 50, nyanCatHeight + 50);
+</script>
+</body>
+</html>
