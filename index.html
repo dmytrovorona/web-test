@@ -14,13 +14,38 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 2;
+            z-index: 99;
+        }
+
+        #explosion {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            transform: translate(-50%, -50%) scale(3);
+            z-index: 1;
+        }
+
+        #megumin {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translate(50%, -50%);
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 <div id="nyan-cat">
     <img src="https://www.nyan.cat/cats/original.gif" alt="Nyan Cat">
+</div>
+
+<div id="explosion">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2ZrbWZjb240bmdrM3gzOG5mYzJpNGkzazhoYXZ1dGwxbzVtNDE4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oe33xf3B50fsc/giphy.gif"
+         alt="Explosion">
+</div>
+
+<div id="megumin">
+    <img src="https://media.tenor.com/LKUn-5uzK4UAAAAC/megumin-anime.gif" alt="Megumin">
 </div>
 
 <audio id="nyan-music" src="https://www.nyan.cat/music/original.mp3" loop autoplay></audio>
