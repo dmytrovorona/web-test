@@ -22,8 +22,11 @@
     <img src="https://www.nyan.cat/cats/original.gif" alt="Nyan Cat">
 </div>
 
+<audio id="nyan-music" src="https://www.nyan.cat/music/original.mp3" loop autoplay></audio>
+
 <script>
     var nyanCatDiv = document.getElementById('nyan-cat');
+    var nyanMusic = document.getElementById('nyan-music');
 
     // Adjust the size of the Nyan Cat here
     var nyanCatWidth = 300;
@@ -71,6 +74,14 @@
 
     // Start moving the Nyan Cat
     moveNyanCat();
+
+    // Function to adjust the volume
+    function setVolume(volume) {
+        nyanMusic.volume = volume;
+    }
+
+    // Example: Set volume to 0.5 (50%)
+    setVolume(0.03);
 </script>
 </body>
 </html>
